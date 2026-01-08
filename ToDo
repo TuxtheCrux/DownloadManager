@@ -1,0 +1,10 @@
+1. Download Manager
+Entwickelt eine Anwendung mit einer Listview und einer Textbox und einem Button. In die Textbox kommt eine URL und bei Bestätigung wird dies in die Listview aufgenommen und runter geladen. Wenn der Download fertig ist wird der Download automatisch aus der ListView entfernt. Alternativ kann der Nutzer einen Download abbrechen, wenn der den Eintrag aus der Liste löscht. Hierzu selektiert er den Eintrag und drückt die Entfernen Taste. (KeyPress Event, lv.getSelectionModel().getSelectedItem())
+Der Download muss über Threads erfolgen, da sonst die Anwendung blockieren würde. Man erstellt also eine Klasse "Download" die die URI und den Thread Verwaltet und eine Listview.
+
+Seht euch auf dem Wege das Binding nochmal an, Threads sowie die Listview.
+
+2. CSV
+Verarbeitet nochmal eine CSV. Macht euch eine Anwendung wo ihr die Einträge einer CSV "durchblättern" und bearbeiten könnt. Versucht beim Verarbeiten der CSV die Streams zu verwenden (Files.lines) um die CSV in eure Klasse zu überführen.
+
+Üben von FileIO, Streams, UI / Binding, String Verarbeitung
