@@ -12,16 +12,24 @@ public class Controller {
     private TextField tF;
 
 
-    /* ToDO
-        Implement propertyChange functionality
-     */
     @FXML
     private void onDownloadClick(ActionEvent event){
-
-        if (!tF.getText().isEmpty()) {
-            listURL.getItems().add(new Download(tF.getText()));
-        } else {
-            System.out.println("URL field is empty. Please enter a valid URL.");
+        try {
+            if (!tF.getText().isEmpty()) {
+                listURL.getItems().add(new Download(tF.getText()));
+            } else {
+                System.out.println("URL field is empty. Please enter a valid URL.");
+            }
+            for (int i = 0; i < listURL.getItems().size(); i++) {
+                Download tmpDownloadItem = listURL.getItems().get(i);
+                tmpDownloadItem.addPropertyChangeListener(e -> {
+                    if (e.getNewValue().equals(true)) {
+                        listURL.getItems().remove(tmpDownloadItem);
+                    }
+                });
+            }
+        } catch(Exception ex){
+            System.err.println("An error occurred while processing the download: " + ex.getMessage());
         }
 
     }
