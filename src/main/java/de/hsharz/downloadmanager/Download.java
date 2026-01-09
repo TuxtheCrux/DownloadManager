@@ -18,12 +18,12 @@ public class Download {
 
     public void downloadingURL(){
         try {
-            Thread.sleep(1000);
+            Thread.sleep(10_000);
             Platform.runLater(() ->
                     support.firePropertyChange("finishedDownload", false, true )
             );
         } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+            return;
         }
     }
 
